@@ -15,6 +15,12 @@ RUN  bash ilstest*.setup -i
 
 RUN printf "$COS cos1 cos2 cos3 cos4" >> /etc/hosts
 
+RUN echo $' #!/bin/bash \n\
+printf "$COS cos1 cos2 cos3 cos4" >> /etc/hosts \n\
+screen -DmS /ilstest -$COS \n\
+cd /ils/ \n'\
+> /tmp/RUN
+
 
 EXPOSE 80
 EXPOSE 3077
