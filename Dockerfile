@@ -44,7 +44,7 @@ RUN $CONFILE
 
 WORKDIR /opt/ils/bin/
 
-RUN $'/bin/bash \n\
+RUN echo $'#!/bin/bash \n\
 service httpd start \n\
 sleep 1 \n\
 service evlog start \n\
