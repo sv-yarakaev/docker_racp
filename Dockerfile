@@ -51,16 +51,14 @@ service evlog start \n\
 sleep 1 \n\
 service spread start \n\
 sleep 1 \n\
-nohup /opt/ilstest/startTIP 1 $COS & \n\
-sleep 1 \n\
-nohup ./run 1 & \n\
+#nohup /opt/ilstest/startTIP 1 $COS > /dev/null 2>&1  & \n\
 \n' > $RUNFILE
 
+#RUN $RUNFILE
 
 
-
-EXPOSE 80:80
+EXPOSE 80
 EXPOSE 3077
 
-ENTRYPOINT [ "/bin/bash" ]
+CMD $RUNFILE ; "/bin/bash"
 
